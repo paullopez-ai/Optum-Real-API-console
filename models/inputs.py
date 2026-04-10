@@ -164,7 +164,7 @@ CLAIM_PRECHECK_PRESETS: list[dict] = [
             "payerId": "87726",
             "payerName": "UNITED HEALTHCARE",
             "providerNpi": "1942376918",
-            "providerTaxId": "",
+            "providerTaxId": "448835440",
             "providerOrganization": "COVENANT MULTISPECIALTY GROUP LLC",
             "providerLastName": "DAVIS",
             "providerStreet": "3555 S VAL VISTA DR",

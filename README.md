@@ -28,6 +28,19 @@ python optum_console.py
 
 The menu lets you pick an API, fill in input fields (or load a preset), review the request, and see the full raw response with field population analysis.
 
+## Entering Input
+
+- Choose an API, then select a preset or manual entry.
+- For each field, press Enter to accept the default or type a new value.
+- Claim Pre-Check has two modes: structured fields (builds X12 for you) or raw X12 paste.
+
+## Output Selection
+
+After each request, you can save results:
+
+- Prompt: `Save output? [j/m/b/n] (j=json, m=markdown, b=both, n=no)`
+- Files are written to `results/` in the project root.
+
 ## Supported APIs
 
 | # | API | Endpoint |

@@ -38,7 +38,7 @@ from output.formatter import (
 )
 from output.saver import save_json, save_markdown
 
-console = Console()
+console = Console(emoji=False)
 
 
 # ── Startup validation ──
@@ -270,12 +270,19 @@ def prompt_save(result: dict, x12_fields: dict):
     """Ask user if they want to save output."""
     console.print()
     choice = Prompt.ask(
-        "Save output? [bold][j][/]son / [bold][m][/]arkdown / [bold][b][/]oth / [bold][n][/]o",
+        "Save output? [j/m/b/n] (j=json, m=markdown, b=both, n=no)",
         default="n",
-    ).lower()
+    ).strip().lower()
 
-    if choice in ("n", ""):
+    if choice in ("n", "no", ""):
         return
+
+    if choice in ("json", "j"):
+        choice = "j"
+    elif choice in ("markdown", "md", "m"):
+        choice = "m"
+    elif choice in ("both", "b"):
+        choice = "b"
 
     api_name = result["api_name"]
     body = result["response_body"]
